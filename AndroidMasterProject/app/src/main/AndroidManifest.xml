@@ -1,0 +1,66 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.happyfinish.androidmasterproject"
+
+    android:versionName="1.0"
+    android:versionCode="1"
+    android:installLocation="preferExternal">
+
+    <!-- Unity defines these... -->
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:isGame="true">
+
+        <activity
+            android:name=".MainActvity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The Unity activity -->
+        <activity
+            android:label="@string/app_name"
+            android:screenOrientation="fullSensor"
+            android:launchMode="singleTask"
+            android:process=":UnityKillsMe"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:name="com.happyfinish.androidmasterproject.UnityPlayerActivity"
+            android:parentActivityName=".MainActvity">
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+            <!--<meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />-->
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActvity"/>
+        </activity>
+
+        <uses-library android:name="com.ti.s3d" android:required="false" />
+        <uses-library android:name="com.osterhoutgroup.api.ext" android:required="false" />
+
+    </application>
+
+    <!-- Unity defines these... but if we are using Gradle, then it's not relevant, isn't it? -->
+    <!-- Please note the glEsVersion tag, which MUST be set -->
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />
+    <uses-feature android:glEsVersion="0x00020000" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" />
+</manifest>

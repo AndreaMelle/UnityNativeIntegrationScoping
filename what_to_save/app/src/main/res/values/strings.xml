@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string name="app_name">abtest</string>
-
-  <string name="activity_preunity">Pre Unity</string>
-  <string name="gotounity_button_label">Go to Unity Activity</string>
-</resources>
