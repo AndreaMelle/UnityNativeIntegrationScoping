@@ -1,0 +1,32 @@
+﻿#pragma once
+
+#include "il2cpp-config.h"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+#include <stdint.h>
+
+// System.Threading.CompressedStack
+struct CompressedStack_t2091;
+
+#include "mscorlib_System_Object.h"
+#include "mscorlib_System_IntPtr.h"
+
+// System.Security.SecurityContext
+struct  SecurityContext_t2090  : public Object_t
+{
+	// System.Boolean System.Security.SecurityContext::_capture
+	bool ____capture_0;
+	// System.IntPtr System.Security.SecurityContext::_winid
+	IntPtr_t ____winid_1;
+	// System.Threading.CompressedStack System.Security.SecurityContext::_stack
+	CompressedStack_t2091 * ____stack_2;
+	// System.Boolean System.Security.SecurityContext::_suppressFlowWindowsIdentity
+	bool ____suppressFlowWindowsIdentity_3;
+	// System.Boolean System.Security.SecurityContext::_suppressFlow
+	bool ____suppressFlow_4;
+};

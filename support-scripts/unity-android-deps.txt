@@ -1,0 +1,5 @@
+assets/bin
+libs/armeabi-v7a
+libs/unity-classes.jar
+libs/QCARUnityPlayer.jar
+libs/Vuforia.jar
